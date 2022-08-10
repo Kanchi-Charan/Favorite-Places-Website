@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{%load static%}
+
+{% block title %}Login{% endblock %}
+
+{% block css_files%} 
+    <link rel = "stylesheet" href = "{% static "blog/register.css" %}"/>
+{% endblock%}
+
+{% block content %}
+<section class = "register">
+<header class = "header"><h1>Login</h1></header>
+    <form class = "form" action={% url "login" %} method="POST">
+        {%csrf_token%}
+        <ul>
+        {% for form_field in form %}
+        <section class = "items">
+            <li>{{form_field.label_tag}}</li>
+            <li>{{form_field}}</li>
+            <li>{{form_field.errors}}</li>
+        </section>
+        {% endfor %}
+        </ul>
+        {{message}}
+        <button>Submit</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Favorite Places {% endblock %}
+
+{% block css_files%}
+    <link rel="stylesheet" href = "{% static "blog/index.css" %}"/>
+    <link rel="stylesheet" href = "{% static "blog/post.css" %}"/>
+{% endblock %}
+
+{% block content %} 
+    <section class = "welcome">
+        <header>
+            <img src = "{% static "blog/images/Somnath-temple.webp"%}" alt = "Somnath temple"/>
+            <h2> Favorite Places </h2>
+        </header>
+        <h3> Place where you can share your Favorite Places </h3>
+    </section>
+
+    <section id = "latest-posts">
+        <h2>Latest Places</h2>
+        <ul>
+        {% for post in posts %}
+            {% include "blog/includes/post.html" %}
+        {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

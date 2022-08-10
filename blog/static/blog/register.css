@@ -1,0 +1,58 @@
+.register{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 50%;
+    margin: 5rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+}
+
+.header h1{
+    margin: 0;
+}
+
+.form ul{
+    margin: 0;
+    padding: 0;
+}
+
+.items{
+    margin: 1rem 0;
+}
+
+.form li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button{
+    font: inherit;
+    background-color: #390281;
+    color: white;
+    border: 1px solid #390281;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background-color: #4f0ba7;
+  border-color: #4f0ba7;
+}
+
+.form input,
+.form textarea{
+    display: block;
+    width: 100%;
+    font: inherit;
+    padding: 0.25rem;
+    border-radius: 12px;
+}

@@ -1,0 +1,20 @@
+.users{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 50%;
+    margin: 5rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+}
+.users ul{
+    padding: 0;
+}
+
+.users li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
