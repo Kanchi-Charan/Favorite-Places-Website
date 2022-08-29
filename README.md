@@ -1,6 +1,10 @@
-#Favorite-Places-Website
-#Users can share about their Favorite Places, can see the places shared by other users, can add a place to Read Later List to read about it later, can add comments to the places, can update the profile pics, can see other users profiles and posts they had added.
-#Sreenshots of the website.
+# Favorite Places
+Users can share about their Favorite Places, can see the places shared by other users, can add a place to Read Later List to read about it later, can add comments to the places, can delete the place that they have added.
+
+## Tools/Technologies used
+Django, SQLite, HTML, CSS.
+
+## Snapshots
 ![Screenshot (29)](https://user-images.githubusercontent.com/110914250/187198511-f3d39c71-8159-4815-89a6-e8148752ccfe.png)
 ![Screenshot (10)](https://user-images.githubusercontent.com/110914250/187198537-706e34cc-4d74-483d-91c6-6a558f46a0c1.png)
 ![Screenshot (11)](https://user-images.githubusercontent.com/110914250/187198556-824a7648-3031-4a5b-b74e-8015489f83aa.png)
