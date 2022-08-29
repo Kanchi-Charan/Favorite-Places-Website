@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block css_files%}
+    <link rel = "stylesheet" href = "{% static "blog/post.css"%}">
+    <link rel = "stylesheet" href = "{% static "blog/index.css"%}">
+    <link rel = "stylesheet" href = "{% static "blog/my_posts.css"%}">
+{% endblock %}
+
+{% block content %}
+<section class = "welcome">
+    <header>
+        <a href="{%url "profile-pic" %}">
+        {% if profilepic %}
+            <img src="{{ profilepic.profile_pic.url }}" alt="{{user1.username}}"/>
+        {% else %}
+            <img src = "{% static "blog/images/Somnath-temple.webp"%}" alt = "Somnath temple"/>
+        {% endif %}
+        </a>
+    </header>
+    <h3> {{user1.first_name}} {{user1.last_name}}</h3>
+</section>
+
+<section class = "myposts">
+    {% if posts %}
+    <h2>{{user1.first_name}} Posts</h2>
+    {% else %}
+    <h2>{{user1.first_name}} has no posts to show</h2>
+    {% endif %}
+    <ul>
+    {% for post in posts %}
+        {% include "blog/includes/post.html" %}
+    {% endfor %}
+    </ul>
+</section>
+{% endblock %}

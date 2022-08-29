@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Profile Pic
+{% endblock%}
+
+{% block css_files%}
+<link rel = "stylesheet" href = "{% static "blog/create.css"%}"/>
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class = "create">
+    <form class = "form" action = {% url "profile-pic" %} method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {% for form_field in form %}
+            <section class = "items">
+                <li>{{form_field.label_tag}}</li>
+                <li>{{form_field}}</li>
+                <li>{{form_field.errors}}</li>
+            </section>
+            {% endfor %}
+            {{message}}
+            <button type = "submit">Submit</button>
+    </form>
+</section>
+{% else %}
+<h1>Please login</h1>
+{%endif%}
+{% endblock %}

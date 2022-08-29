@@ -33,3 +33,6 @@ class StoredPosts(models.Model):
     def __str__(self):
         return f"{self.slug}"
 
+class ProfilePic(models.Model):
+    profile_pic = models.ImageField(upload_to = "profiles")
+    user = models.OneToOneField(User,related_name = "profilepic",on_delete=models.CASCADE)

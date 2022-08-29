@@ -44,3 +44,6 @@ class PostsForm(forms.Form):
 
 class CommentsForm(forms.Form):
     comment = forms.CharField(label = "Comment",widget = forms.Textarea)
+
+class ProfilepicForm(forms.Form):
+    profile_pic = forms.ImageField(label = "Upload Profile Pic")

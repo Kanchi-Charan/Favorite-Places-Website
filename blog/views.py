@@ -1,3 +1,5 @@
+from ast import Try
+from asyncio.windows_events import NULL
 from django.shortcuts import redirect, render
 from django.views.generic import ListView,CreateView
 from django.views import View
@@ -7,20 +9,39 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.utils.text import slugify
 
-from .models import Comments, FavoritePlace,StoredPosts
-from .forms import CommentsForm, RegisterForm,LoginForm,PostsForm
+from .models import Comments, FavoritePlace,StoredPosts,ProfilePic
+from .forms import CommentsForm, ProfilepicForm, RegisterForm,LoginForm,PostsForm
 # Create your views here.
 
-class StartingPage(ListView):
-    model = FavoritePlace
-    template_name = "blog/index.html"
-    ordering = ["-date"]
-    context_object_name = "posts"
+def StartingPage(request):
+    posts = FavoritePlace.objects.all().order_by("-date")[:3]
+    try:
+        profilepic = ProfilePic.objects.get(user = request.user)
+    except:
+        profilepic = NULL
+    return render (request,"blog/index.html",{
+        "posts":posts,
+        "profilepic":profilepic,
+    })
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        data = queryset[:3]
-        return data
+
+
+#class StartingPage(ListView):
+#   model = FavoritePlace
+#    template_name = "blog/index.html"
+#    ordering = ["-date"]
+#    context_object_name = "posts"
+#
+#    def get_queryset(self):
+#        queryset = super().get_queryset()
+#        data = queryset[:3]
+#        return data
+
+#    def get_context_data(request ,self, **kwargs):
+#        context = super().get_context_data(**kwargs)
+#        profilepic = ProfilePic.objects.get(user = request.user.id)
+#        context["profilepic"] = profilepic
+#        return context
     
 
 class RegisterView(View):
@@ -131,6 +152,8 @@ class UsersView(ListView):
     template_name = "blog/all-users.html"
     context_object_name = "users"
 
+
+
 class PostDetail(View):
     def get(self,request,slug):
         post = FavoritePlace.objects.get(slug=slug)
@@ -204,8 +227,41 @@ class StoredPostsView(View):
         return redirect("read-later")
 
         
-        
+class ProfilePicView(View):
+    def get(self,request):
+        form = ProfilepicForm
+        return render(request,"blog/profile-pic.html",{
+            "form":form,
+        })
 
-            
-    
+    def post(self,request):
+        form = ProfilepicForm(request.POST,request.FILES)
+        if(form.is_valid()):
+            image1 = form.cleaned_data["profile_pic"]
+            try:
+                profile1 = ProfilePic.objects.get(user = request.user).delete()
+            except:
+                profile1 = NULL
+            profile = ProfilePic.objects.create(profile_pic = image1,user = request.user)
+            profile.save()
+            return redirect("starting-page")
+        return render(request,"blog/profile-pic.html",{
+            "form":form,
+        })
+
+
+class UserPageView(View):
+    def get(self,request,slug):
+        user1 = User.objects.get(username = slug)
+        try:
+            profilepic = ProfilePic.objects.get(user = user1)
+        except:
+            profilepic = NULL
+        user = User.objects.get(username = slug)
+        posts = FavoritePlace.objects.filter(author = user)
+        return render(request,"blog/user-page.html",{
+            "user1" : user,
+            "profilepic":profilepic,
+            "posts":posts,
+        })
 

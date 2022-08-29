@@ -11,7 +11,13 @@
 {% block content %} 
     <section class = "welcome">
         <header>
-            <img src = "{% static "blog/images/Somnath-temple.webp"%}" alt = "Somnath temple"/>
+            <a href="{%url "profile-pic" %}">
+            {% if profilepic %}
+                <img src="{{ profilepic.profile_pic.url }}" alt="{{user.username}}"/>
+            {% else %}
+                <img src = "{% static "blog/images/Somnath-temple.webp"%}" alt = "Somnath temple"/>
+            {% endif %}
+            </a>
             <h2> Favorite Places </h2>
         </header>
         <h3> Place where you can share your Favorite Places </h3>

@@ -20,6 +20,7 @@
             <h2><a href = "{% url "all-users" %}">All Users</a></h2>
             <h2><a href = "{% url "create" %}">Create</a></h2>
             <h2>Hello {{user.first_name}}</h2>
+            <h2><a href = "{% url "user-page" user.username %}">Profile</a></h2>
             <h2><a href = "{% url "logout" %}">Logout</a></h2>
         {% else %}
             <h2><a href = "{% url "register" %}"> Register</a></h2>
