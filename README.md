@@ -6,6 +6,7 @@ Django, SQLite, HTML, CSS.
 
 ## Snapshots
 
+Starting Page of the website.
 ![Screenshot (31)](https://user-images.githubusercontent.com/110914250/187199952-703d9aea-c532-40d8-afbc-65a312067c29.png)
 ![Screenshot (10)](https://user-images.githubusercontent.com/110914250/187198537-706e34cc-4d74-483d-91c6-6a558f46a0c1.png)
 ![Screenshot (11)](https://user-images.githubusercontent.com/110914250/187198556-824a7648-3031-4a5b-b74e-8015489f83aa.png)
