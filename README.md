@@ -5,7 +5,8 @@ Users can share about their Favorite Places, can see the places shared by other 
 Django, SQLite, HTML, CSS.
 
 ## Snapshots
-![Screenshot (29)](https://user-images.githubusercontent.com/110914250/187198511-f3d39c71-8159-4815-89a6-e8148752ccfe.png)
+
+![Screenshot (31)](https://user-images.githubusercontent.com/110914250/187199952-703d9aea-c532-40d8-afbc-65a312067c29.png)
 ![Screenshot (10)](https://user-images.githubusercontent.com/110914250/187198537-706e34cc-4d74-483d-91c6-6a558f46a0c1.png)
 ![Screenshot (11)](https://user-images.githubusercontent.com/110914250/187198556-824a7648-3031-4a5b-b74e-8015489f83aa.png)
 ![Screenshot (20)](https://user-images.githubusercontent.com/110914250/187198583-fb52dad5-6190-4924-8eaa-e3fdbb6df6a3.png)
@@ -16,3 +17,5 @@ Django, SQLite, HTML, CSS.
 ![Screenshot (26)](https://user-images.githubusercontent.com/110914250/187198649-81ac8e56-1053-4cb5-9423-2e0b0a6cdf23.png)
 ![Screenshot (27)](https://user-images.githubusercontent.com/110914250/187198668-4c529a65-1b98-411a-b194-e5d5999c011a.png)
 ![Screenshot (28)](https://user-images.githubusercontent.com/110914250/187198684-47de95ca-a0b8-43ac-8179-bc2a75b7e9f1.png)
+![Screenshot (29)](https://user-images.githubusercontent.com/110914250/187200052-2f27cd07-e865-4302-a650-659e61798d8c.png)
+![Screenshot (30)](https://user-images.githubusercontent.com/110914250/187200069-9540b72d-0d1e-4a50-8b50-3eef0e83abcc.png)
